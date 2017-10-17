@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'Bebas';
+    src: url('font/BEBAS.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html {
+    height: 100%;
+}
+body {
+    max-height: 100%;
+}
+body {
+    line-height: 1;
+    font-size: 16px;
+    background: rgba(92,218,147,1);
+    background: -moz-linear-gradient(-45deg, rgba(92,218,147,1) 0%, rgba(5,57,107,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(92,218,147,1)), color-stop(100%, rgba(5,57,107,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(92,218,147,1) 0%, rgba(5,57,107,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(92,218,147,1) 0%, rgba(5,57,107,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(92,218,147,1) 0%, rgba(5,57,107,1) 100%);
+    background: linear-gradient(135deg, rgba(92,218,147,1) 0%, rgba(5,57,107,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5cda93', endColorstr='#05396b', GradientType=1 );
+}
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    font-family: Bebas;
+    color: rgb(34, 35, 37);
+}
+*::after {
+    content:'';
+    display: block;
+    clear: both;
+}
+h1 {
+    text-align: center;
+    margin: 50px 0;
+    color: #EAFDFC;
+    font-size: 3em;
+    letter-spacing: 0.2em;
+}
+#container {
+    width: 960px;
+    margin: 0 auto;
+}
+nav ul {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.15);
+}
+nav ul {
+    background-color: #17242A;
+    line-height: 3em;
+    width: 100%;
+    text-align: center;
+}
+nav ul li{
+    list-style-type: none;
+    float: left;
+    color: rgb(188, 218, 218);
+    width: 240px;
+}
+nav ul li a, nav ul li a:link, nav ul li a:active, nav ul li a:hover, nav ul li a:visited {
+    color: rgb(188, 218, 218);
+    text-decoration: none;
+    display: block;
+}
+nav ul li:nth-child(2) {
+    background-color: #2A7A76;    
+}
+nav ul li:nth-child(3) {
+    background-color: #3AAFA9;    
+}
+nav ul li:last-child{
+    background-color: #eafdfc;    
+}
+nav ul li.hasDropDown {
+    position: relative;
+}
+nav ul li.hasDropDown ul.dropdown {
+    position: absolute;
+    z-index:1;
+    max-height:0;
+ 
+    -webkit-transform:perspective(400) rotate3d(1,0,0,-90deg);
+    -webkit-transform-origin:50% 0;
+    -webkit-transition:350ms;
+    -moz-transition:350ms;
+    -o-transition:350ms;
+    transition:350ms;
+}
+nav ul li.hasDropDown:hover ul.dropdown {
+    max-height:1000px;
+    -webkit-transform:perspective(400) rotate3d(0,0,0,0);
+}
+.hasDropDown li:nth-child(2) {
+    position: relative;
+}
+.hasDropDown li:nth-child(2):hover::after {
+    content: url(img/triangle.svg);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 240px;
+    top: 50%;
+    margin-top: -20px;
+}
+nav ul li ul.deeplist {
+    position: absolute;
+    left: 260px;
+    top: 0;
+    overflow:hidden;
+    max-height:0;
+    -webkit-transition:max-height 500ms ease;
+    -moz-transition:max-height 500ms ease;
+    -o-transition:max-height 500ms ease;
+    transition:max-height 500ms ease;
+}
+
+nav ul li.hasDropDown li:nth-child(2):hover .deeplist {
+    max-height:150px;
+}
+
