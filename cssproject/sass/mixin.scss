@@ -1,0 +1,8 @@
+@mixin border-radius ($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin senka($v1, $v2, $v3, $color) {
+	box-shadow: $v1 $v2 $v3 $color;
+}
