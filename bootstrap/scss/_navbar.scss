@@ -1,0 +1,21 @@
+nav.navbar-light {
+    color: $white;
+    a.navbar-brand {
+        color: $white;
+        font-weight: 900;
+        letter-spacing: 1px;
+    }
+    .navbar-toggler {
+        background-color: $greenish;
+        color: $white;
+    }
+    .navbar-toggler-icon {
+        background-image: url(../img/hamburger.svg);
+    }
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link, .navbar-light .navbar-nav .nav-link {
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 900;
+}

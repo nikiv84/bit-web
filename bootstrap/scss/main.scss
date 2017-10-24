@@ -1,0 +1,167 @@
+@import 'variables';
+@import 'navbar';
+
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: $main-font;
+}
+.wrapper {
+    width: 100%;
+}
+.blueish {
+    background-color: $blueish;
+}
+.greenish {
+    background-color: $greenish;
+}
+.c-align {
+    text-align: center;
+}
+.banner{
+    color:white;
+    h1{
+        font-weight: 900;
+        font-size:1.5em;
+    }
+    img{
+        padding:15px;
+        max-width: 100%;
+    }
+    .divider {
+        hr {
+            display: inline-block;
+            border-top: 4px solid #fff;
+            width: 15%;
+            margin:0;
+            padding: 0;
+            vertical-align: middle;
+            margin-bottom: 8px;
+        }
+        i {
+            margin: 0 5px;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.portfolio {
+        margin-bottom: 80px;
+    h2 {
+        font-weight: 900;
+        margin-top:50px;
+    }
+    .divider-blue {
+        hr {
+            display: inline-block;
+            border-top: 4px solid $blueish;
+            width: 15%;
+            margin:0;
+            padding: 0;
+            vertical-align: middle;
+            margin-bottom: 8px;
+        }
+        i {
+            margin: 0 5px;
+            font-size: 1.5rem;
+        }
+    }
+    img {
+        max-width: 100%;
+        padding: 5px 20px;
+    }
+
+}
+.about{
+    padding: 50px 0;
+    font-weight: 700;
+    h2{
+        font-size: 3em;
+        font-weight: 900;
+    }
+    p{
+        font-size:1.2em;
+        line-height: 1.5;
+        text-align: left;
+    }
+    .divider{
+        margin-bottom: 20px;
+    }
+    button.btn-light {
+        background-color: transparent;
+        color: $white;
+        -webkit-appearance: none;
+        &:active{
+            background-color: transparent !important;
+            color: $blueish !important;
+            box-shadow: none !important;
+        }
+    }
+}
+
+.contact {
+    h2 {
+        font-weight: 900;
+        margin-top:50px;
+    }
+    .divider-blue {
+        hr {
+            display: inline-block;
+            border-top: 4px solid $blueish;
+            width: 15%;
+            margin:0;
+            padding: 0;
+            vertical-align: middle;
+            margin-bottom: 8px;
+        }
+        i {
+            margin: 0 5px;
+            font-size: 1.5rem;
+        }
+    }
+    form {
+        width: 100%;
+        margin: 50px 0;
+        input, textarea {
+            width: 100%;
+            padding: 20px 0;
+            border: none;
+            border-bottom: 2px solid rgba($greyish, 0.2);
+            font-weight: 900;
+        }
+        ::placeholder{
+            color: rgba($greyish, 0.5);
+            font-size: 1.3em;
+        }
+        textarea {
+            height: 250px;
+            resize: none;
+        }
+        button {
+            float: left;
+            background-color: $greenish;
+            color: $white;
+            padding: 10px 25px;
+            margin-top: 10px;
+            font-weight: 900;
+        }
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+}
+
+footer {
+    color: $white;
+    padding: 50px 0;
+    ul {
+        list-style: none;
+        li {
+            display: inline-block;
+            color: $white;
+        }
+    }
+}
