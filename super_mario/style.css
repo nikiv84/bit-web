@@ -1,0 +1,29 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background: #0000ff url(images/bg.jpg) repeat-x left bottom;
+}
+
+#marioContainer {
+    width: 304px;
+    height: 256px;
+    position: fixed;
+    bottom: 82px;
+    left: 40%;
+}
+
+#marioContainer img {
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+#marioContainer img.hidden {
+    display: none;
+}
