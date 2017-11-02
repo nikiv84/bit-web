@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600&amp;Inconsolata:400,700" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/nice-select.css">
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+        *:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .nice-select {
+            width: 500px;
+            margin: 0 auto;
+            float: none;
+        }
+    </style>
+</head>
+
+<body>
+    <select>
+        <option data-display="Select">Nothing</option>
+        <option value="1">Some option</option>
+        <option value="2">Another option</option>
+        <option value="3" disabled>A disabled option</option>
+        <option value="4">Potato</option>
+    </select>
+
+
+    <script src="js/jquery.nice-select.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('select').niceSelect();
+        });
+    </script>
+</body>
+
+</html>
