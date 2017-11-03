@@ -1,0 +1,39 @@
+.hasbg {
+    background-color: #343a40!important;
+    width: 100%;
+}
+.hasbg .container {
+    padding: 0;
+}
+
+.hasbg .container nav {
+    margin: 0;
+    padding-right: 5px;
+}
+
+img {
+    width: 100%;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 515px;
+}
+a.show-item {
+    overflow: hidden;
+    margin-bottom: 30px;
+    display: block;
+}
+h1 {
+    margin: 30px auto;
+}
+span {
+    border: 1px solid rgb(187, 190, 194);
+    display: block;
+    border-top: none;
+    padding: 20px 10px;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+}
