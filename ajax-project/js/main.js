@@ -3,6 +3,13 @@
     setupEventListeners();
 })();
 
+$(document).on("click", "a", function () {
+    var value = $(this).attr("data-show-id")
+    localStorage.setItem("myShow", value);
+    window.location.href = "single.html";
+
+})
+
 function setupEventListeners() {
     $(document).on("keypress", function (e) {
         console.log(e);
@@ -31,10 +38,10 @@ function searchForShows() {
         $.each($results, function (i) {
 
             var showPoster;
-            if($results[i].show.image == null){
-                showPoster= 'http://via.placeholder.com/350x550'
+            if ($results[i].show.image == null) {
+                showPoster = 'http://via.placeholder.com/350x550'
             } else {
-                showPoster= $results[i].show.image.original;
+                showPoster = $results[i].show.image.original;
             }
             var id = $results[i].id;
             var showName = $results[i].show.name;
@@ -73,10 +80,10 @@ function findUsAll() {
         for (var i = 0; i < 51; i++) {
 
             var showPoster;
-            if($results[i].image==null){
-                showPoster= 'http://via.placeholder.com/350x550'
+            if ($results[i].image == null) {
+                showPoster = 'http://via.placeholder.com/350x550'
             } else {
-                showPoster= $results[i].image.original;
+                showPoster = $results[i].image.original;
             }
             var id = $results[i].id;
             var showName = $results[i].name;
@@ -91,10 +98,10 @@ function findUsAll() {
                         <span>` + showName + `</span>
                     </a>
                 </div>`);
-            
-        } 
-         
 
-     })
+        }
+
+
+    })
 
 }
