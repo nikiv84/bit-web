@@ -1,9 +1,9 @@
 (function () {
     setupEventListeners();
-    if(window.location.href.indexOf("index.html") > -1) {
+    if (window.location.href.indexOf("index.html") > -1) {
         popularShows();
         return;
-     }
+    }
 
     showResult();
 })();
@@ -15,7 +15,7 @@ function setupEventListeners() {
             searchForShows();
         }
     });
-    $(document).on("click", "a", function () {
+    $(document).on("click", ".show-link", function () {
         var value = $(this).attr("data-show-id")
         localStorage.setItem("myShow", value);
         window.location.href = "single.html";
@@ -51,8 +51,8 @@ function searchForShows() {
 
             output.append(`
                         <div class="col-12 col-md-6 col-lg-4">
-                            <a class="show-item" data-show-id="` + id + `" href="#">
-                                <span class="img-container" style="background-image: url(`+ showPoster + `) ">
+                            <a class="show-item show-link" data-show-id="` + id + `" href="#">
+                                <span class="img-container" style="background-image: url(` + showPoster + `) ">
 
                                 </span>
                                 <span class="show-name">` + showName + `</span>
@@ -90,9 +90,9 @@ function popularShows() {
 
             output.append(`
                 <div class="col-12 col-md-6 col-lg-4">
-                    <a class="show-item" data-show-id="` + id + `" href="#">
-                        <span class="img-container" style="background-image: url(`+ showPoster + `) ">
-                            
+                    <a class="show-item show-link" data-show-id="` + id + `" href="#">
+                        <span class="img-container">
+                            <span class="show-img" style="background-image: url(` + showPoster + `)"></span>
                         </span>
                         <span class="show-name">` + showName + `</span>
                     </a>
@@ -150,7 +150,7 @@ function showResult() {
         }
         output.append(`
                 <div class="col-12 col-md-6">
-                        <h3>Seasons (`+ jsonStructure._embedded.seasons.length + `)</h3>
+                        <h3>Seasons (` + jsonStructure._embedded.seasons.length + `)</h3>
                         <ul>` + liSeasons + `</ul>
                         <h3>Cast</h3>
                         <ul>` + liCast + `</ul>
@@ -161,4 +161,25 @@ function showResult() {
           ` + jsonStructure.summary + `
     </div>`);
     })
+}
+$("#show-search").on("keyup paste", function () {
+    liveSearch();
+})
+
+function liveSearch() {
+
+    var searchTerm = $("#show-search").val();
+    var expression = new RegExp(searchTerm, "i");
+    var request = $.ajax({
+        url: 'http://api.tvmaze.com/search/shows?q=' + searchTerm,
+    });
+
+    request.done(function (jsonStructure) {
+        $("#live-search").html('');
+        $.each(jsonStructure, function (i) {
+            var showId = jsonStructure[i].show.id;
+            $("#live-search").append(`<li><a href="#" class="show-link" data-show-id=${showId}>${jsonStructure[i].show.name}</a></li>`);
+        });
+    })
+
 }

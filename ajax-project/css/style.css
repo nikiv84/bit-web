@@ -2,6 +2,7 @@
     background-color: #343a40!important;
     width: 100%;
 }
+
 .hasbg .container {
     padding: 0;
 }
@@ -11,29 +12,42 @@
     padding-right: 5px;
 }
 
-
 .img-container {
-    height: 360px;
-    overflow: hidden;
     display: block;
-    background-position: 50% 50%;
-    background-size: cover;
     border-radius: 5px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    overflow: hidden;
 }
+
+.img-container .show-img {
+    display: block;
+    background-position: 50% 50%;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+}
+
+.img-container .show-img:hover {
+    transform: scale(1.1);
+}
+
 .bradius {
     border-radius: 5px;
     max-width: 100%;
     height: auto;
 }
+
 a.show-item {
     margin-bottom: 30px;
     display: block;
 }
+
 h1 {
     margin: 30px auto;
 }
+
 .show-name {
     border: 1px solid rgba(84, 89, 95, 0.5);
     display: block;
@@ -45,11 +59,79 @@ h1 {
     font-size: 1.2em;
 }
 
+.form-inline {
+    position: relative;
+}
+
+.form-control {
+    width: 250px!important;
+}
+
+.form-inline input {
+    z-index: 10;
+}
+
+.row a,
+.row a:link,
+.row a:visited,
+.row a:hover,
+.row a:active {
+    text-decoration: none;
+    color: #016dae;
+}
+
+.row a:hover {
+    color: #2995d3;
+}
+
+#live-search a,
+#live-search a:link,
+#live-search a:visited,
+#live-search a:hover,
+#live-search a:active {
+    text-decoration: none;
+    color: #343a40;
+    padding: 10px;
+    width: 100%;
+    display: inline-block;
+}
+
+#live-search a:hover {
+    background-color: rgb(149, 153, 152);
+    color: rgb(213, 219, 218);
+}
+
+#live-search {
+    position: absolute;
+    top: 35px;
+    list-style: none;
+    padding: 0;
+    background-color: rgba(213, 219, 218, 0.95);
+    border-radius: 0 0 5px 5px;
+    width: 250px!important;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    z-index: 9;
+}
+
+#live-search li {
+    border-bottom: 1px solid rgb(149, 153, 152);
+}
+
+#live-search li:last-child {
+    border: none;
+}
+
+#live-search li:last-child a:hover {
+    border-radius: 0 0 5px 5px;
+}
+
 @media screen and (min-width:360px) {
     .img-container {
         height: 480px;
     }
 }
+
 @media screen and (min-width:576px) {
     .img-container {
         height: 760px;
@@ -61,6 +143,7 @@ h1 {
         height: 440px;
     }
 }
+
 @media screen and (min-width:1200px) {
     .img-container {
         height: 515px;
