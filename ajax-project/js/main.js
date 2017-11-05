@@ -40,9 +40,9 @@ function searchForShows() {
 
         $results = jsonStructure;
         console.log($results);
+        $("h1").text(`Search results: ${$results.length}`);
 
         $.each($results, function (i) {
-
             var showPoster;
             if ($results[i].show.image == null) {
                 showPoster = 'http://via.placeholder.com/350x550?text=No+poster+image'
@@ -54,7 +54,7 @@ function searchForShows() {
 
             output.append(`
                         <div class="col-12 col-md-6 col-lg-4">
-                            <a class="show-item show-link bshadow"" data-show-id="` + id + `" href="#">
+                            <a class="show-item show-link bshadow bradius" data-show-id="` + id + `" href="#">
                             <span class="img-container">
                                 <span class="show-img" style="background-image: url(` + showPoster + `)"></span>
                             </span>
@@ -93,7 +93,7 @@ function popularShows() {
 
             output.append(`
                 <div class="col-12 col-md-6 col-lg-4">
-                    <a class="show-item show-link bshadow" data-show-id="` + id + `" href="#">
+                    <a class="show-item show-link bshadow bradius" data-show-id="` + id + `" href="#">
                         <span class="img-container">
                             <span class="show-img" style="background-image: url(` + showPoster + `)"></span>
                         </span>

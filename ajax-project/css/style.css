@@ -1,15 +1,14 @@
 body {
-    background-color: #1a1a1d;
+    background: #1a1a1d url(../img/bg.jpg);
     color: rgb(243, 237, 240);
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.05em;
-    background: url(../img/bg2.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
 
 .hasbg {
-    background-color: #191e33!important;
+    background-color: transparent;
     width: 100%;
     padding: 10px 0;
 }
@@ -49,7 +48,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(39, 110, 136, 0.25);
+    background-color: rgba(37, 58, 195, 0.25);
 }
 
 .img-container .show-img:hover {
@@ -100,8 +99,8 @@ li {
     border-radius: 20px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    font-weight: bold;
-    font-size: 1.1em;
+    font-weight: 600;
+    font-size: 1.25rem;
     background-color: #ffffff;
     max-height: 108px;
 }
@@ -131,6 +130,10 @@ li {
     color: rgb(79, 153, 182);
 }
 
+#show-search {
+    height: 3rem;
+}
+
 #live-search a,
 #live-search a:link,
 #live-search a:visited,
@@ -144,7 +147,7 @@ li {
 }
 
 #live-search a:hover {
-    background-color: rgb(149, 153, 152);
+    background-color: #2C50DC;
     color: rgb(213, 219, 218);
 }
 
@@ -153,13 +156,14 @@ li {
     top: 20px;
     list-style: none;
     padding: 0;
-    background-color: rgba(213, 219, 218, 0.95);
+    background-color: rgba(231, 238, 243, 0.95);
     border-radius: 0 0 20px 20px;
     width: 250px!important;
     width: -moz-available;
     width: -webkit-fill-available;
     z-index: 9;
     right: 0;
+    font-weight: 500;
 }
 
 .form-control:focus {
@@ -168,10 +172,12 @@ li {
 
 #live-search li {
     border-bottom: 1px solid rgb(149, 153, 152);
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
-#live-search li:first-child {
-    padding-top: 18px;
+#live-search li:first-child a {
+    padding-top: 32px;
 }
 
 #live-search li:last-child {
@@ -185,8 +191,13 @@ li {
 .seasons {
     margin-top: 60px;
 }
-.bshadow{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+.bshadow {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+::placeholder {
+    font-size: 1rem;
+    line-height: 3rem
 }
 
 @media screen and (min-width:360px) {
