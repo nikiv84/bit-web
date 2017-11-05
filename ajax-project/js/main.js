@@ -12,7 +12,10 @@ function setupEventListeners() {
     $(document).on("keypress", function (e) {
         console.log(e);
         if (e.keyCode == 13) {
+
             searchForShows();
+            $("#live-search").html('');
+            $("#show-search").val('');
         }
     });
     $(document).on("click", ".show-link", function () {
@@ -51,10 +54,10 @@ function searchForShows() {
 
             output.append(`
                         <div class="col-12 col-md-6 col-lg-4">
-                            <a class="show-item show-link" data-show-id="` + id + `" href="#">
-                                <span class="img-container" style="background-image: url(` + showPoster + `) ">
-
-                                </span>
+                            <a class="show-item show-link bshadow"" data-show-id="` + id + `" href="#">
+                            <span class="img-container">
+                                <span class="show-img" style="background-image: url(` + showPoster + `)"></span>
+                            </span>
                                 <span class="show-name">` + showName + `</span>
                             </a>
                         </div>`);
@@ -90,7 +93,7 @@ function popularShows() {
 
             output.append(`
                 <div class="col-12 col-md-6 col-lg-4">
-                    <a class="show-item show-link" data-show-id="` + id + `" href="#">
+                    <a class="show-item show-link bshadow" data-show-id="` + id + `" href="#">
                         <span class="img-container">
                             <span class="show-img" style="background-image: url(` + showPoster + `)"></span>
                         </span>
@@ -127,19 +130,17 @@ function showResult() {
             image = jsonStructure.image.original;
         }
         output.append(`
-                <div class="col-12 col-md-6">
-                        <img src="` + image + `" class="bradius">
+                <div class="col-12 col-md-5">
+                        <img src="` + image + `" class="bradius bshadow" alt="Poster">
                 </div>`);
         var liSeasons = '';
         var seasons = jsonStructure._embedded.seasons;
         for (var i = 0; i < seasons.length; i++) {
-            if (seasons[i].premiereDate == null) {
-                seasons[i].premiereDate = 'unknown';
+            if (seasons[i].premiereDate == null || seasons[i].endDate == null) {
+                liSeasons += `<li>Season ${i+1}: TBD</li>`;
+            } else {
+                liSeasons += `<li>Season ${i+1}: ` + seasons[i].premiereDate + ` - ` + seasons[i].endDate + `</li>`;
             }
-            if (seasons[i].endDate == null) {
-                seasons[i].endDate = 'unknown';
-            }
-            liSeasons += `<li>` + seasons[i].premiereDate + ` - ` + seasons[i].endDate + `</li>`;
         }
         var liCast = '';
         for (var i = 0; i < jsonStructure._embedded.cast.length; i++) {
@@ -149,14 +150,14 @@ function showResult() {
             liCast += `<li>` + jsonStructure._embedded.cast[i].person.name + `</li>`;
         }
         output.append(`
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-7 seasons">
                         <h3>Seasons (` + jsonStructure._embedded.seasons.length + `)</h3>
                         <ul>` + liSeasons + `</ul>
                         <h3>Cast</h3>
                         <ul>` + liCast + `</ul>
                 </div>`);
         output.append(`
-    <div class="col-12 ">
+    <div class="col-12 mt-5">
            <h3>Show Details</h3>
           ` + jsonStructure.summary + `
     </div>`);

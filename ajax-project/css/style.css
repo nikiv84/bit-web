@@ -1,6 +1,17 @@
+body {
+    background-color: #1a1a1d;
+    color: rgb(243, 237, 240);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.05em;
+    background: url(../img/bg2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .hasbg {
-    background-color: #343a40!important;
+    background-color: #191e33!important;
     width: 100%;
+    padding: 10px 0;
 }
 
 .hasbg .container {
@@ -14,10 +25,11 @@
 
 .img-container {
     display: block;
-    border-radius: 5px;
+    border-radius: 20px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     overflow: hidden;
+    position: relative;
 }
 
 .img-container .show-img {
@@ -27,6 +39,17 @@
     width: 100%;
     height: 100%;
     transition: transform 0.5s;
+    filter: contrast(1.2);
+}
+
+.img-container .show-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 110, 136, 0.25);
 }
 
 .img-container .show-img:hover {
@@ -34,7 +57,7 @@
 }
 
 .bradius {
-    border-radius: 5px;
+    border-radius: 20px;
     max-width: 100%;
     height: auto;
 }
@@ -46,17 +69,41 @@ a.show-item {
 
 h1 {
     margin: 30px auto;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5em;
+    border: 2px solid white;
+    padding: 5px 15px;
+    line-height: 2;
+    background-color: #2C50DC;
+}
+
+.navbar-brand span {
+    font-family: monospace;
+    letter-spacing: 0.5em;
+    font-size: 1.25em;
+    font-weight: 100;
+}
+
+p,
+li {
+    font-weight: 300;
+    font-size: 1.1em;
 }
 
 .show-name {
-    border: 1px solid rgba(84, 89, 95, 0.5);
     display: block;
-    padding: 20px 10px;
-    border-radius: 5px;
+    padding: 40px 20px;
+    border-radius: 20px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    background-color: #ffffff;
+    max-height: 108px;
 }
 
 .form-inline {
@@ -77,11 +124,11 @@ h1 {
 .row a:hover,
 .row a:active {
     text-decoration: none;
-    color: #016dae;
+    color: rgb(28, 108, 138);
 }
 
 .row a:hover {
-    color: #2995d3;
+    color: rgb(79, 153, 182);
 }
 
 #live-search a,
@@ -103,19 +150,28 @@ h1 {
 
 #live-search {
     position: absolute;
-    top: 35px;
+    top: 20px;
     list-style: none;
     padding: 0;
     background-color: rgba(213, 219, 218, 0.95);
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 20px 20px;
     width: 250px!important;
     width: -moz-available;
     width: -webkit-fill-available;
     z-index: 9;
+    right: 0;
+}
+
+.form-control:focus {
+    box-shadow: none;
 }
 
 #live-search li {
     border-bottom: 1px solid rgb(149, 153, 152);
+}
+
+#live-search li:first-child {
+    padding-top: 18px;
 }
 
 #live-search li:last-child {
@@ -123,7 +179,14 @@ h1 {
 }
 
 #live-search li:last-child a:hover {
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 20px 20px;
+}
+
+.seasons {
+    margin-top: 60px;
+}
+.bshadow{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 @media screen and (min-width:360px) {
@@ -141,6 +204,9 @@ h1 {
 @media screen and (min-width:768px) {
     .img-container {
         height: 440px;
+    }
+    .seasons {
+        margin-top: 0;
     }
 }
 
