@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from './Search';
 
 class Header extends React.Component {
 
@@ -13,12 +14,7 @@ class Header extends React.Component {
                     </button>
 
                     <div className="collapse navbar-collapse justify-content-end pull-right" id="navbarSupportedContent">
-
-                        <div className="form-inline my-2 my-lg-0">
-                            <input className="form-control mr-sm-2 bradius ml-auto bshadow" type="text" placeholder="Search" aria-label="Search" id="show-search" />
-                            <ul id="live-search" className="list-group mr-sm-2"></ul>
-                        </div>
-
+                        <Search />
                     </div>
                 </nav>
             </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { dataService } from '../Service/DataService';
-import Show from './Show';
 import SingleShow from './SingleShow';
 
 class SinglePage extends React.Component {
